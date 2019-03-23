@@ -6,11 +6,21 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { Redirect } from 'react-router-dom'
 import M from "materialize-css";
+import '../../styles/dashboard.css';
+import $ from "jquery";
 
 class Dashboard extends Component {
   componentDidMount() {
     // Auto initialize all the things!
     M.AutoInit();
+    $("#inpt_search").on('focus', function () {
+      $(this).parent('label').addClass('active');
+    });
+    
+    $("#inpt_search").on('blur', function () {
+      if($(this).val().length == 0)
+        $(this).parent('label').removeClass('active');
+    });
   }
   render() {
     const { projects, auth, notifications } = this.props;
@@ -22,14 +32,15 @@ class Dashboard extends Component {
           <div class="section no-pad-bot">
             <div class="container">
               <br></br>
-              <h1 class="header center teal-text text-lighten-2">FARAHY</h1>
+              <h1 class="header center teal-text text-lighten-2" style={{fontWeight: "italic"}}> </h1>
               <div class="row center">
                 <h3 class="header col s12 light">A community of wedding planners, djs and photographers ready for your wedding</h3>
               </div>
-              <div class="row center">
-                <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-              </div>
               <br></br>
+              <form class="search" action="">
+                <input type="search" placeholder="Search here..." required/>
+                <button type="submit">Search</button>
+              </form>  
             </div>
           </div>
           <div class="parallax"><img className="responsive-img" src="/img/wedding-background7.jpg" alt="Unsplashed background img 1" style={{opacity: 0.1, transform: `translate3d(-50%, 221.745px, 0px)`}}/></div>
@@ -75,8 +86,8 @@ class Dashboard extends Component {
             <div class="row">
               <div class="col s12 center">
                 <h3><i class="mdi-content-send brown-text"></i></h3>
-                <h3>Popular Categories</h3>
-                <h4 class="center-align light">From wedding planners to photographers, we've got what you need</h4>                
+                <h3 className="teal-text text-lighten-2">Popular Categories</h3>
+                <h5 class="center-align ">From wedding planners to photographers, we've got what you need</h5>                
               </div>
             </div>
             <div class="row center">

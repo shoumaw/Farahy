@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "farahy-files"
+    "default": "farahy-files",
+    "prototyping": "farahy-ad87a"
   }
 }
