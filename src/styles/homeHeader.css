@@ -1,0 +1,18 @@
+
+/*Search bar style*/
+.nav-search{
+  border-radius: 10px;
+  width: 600px;
+  margin: 0 auto;
+  border: none;
+  background: #000
+}
+nav .nav-wrapper{
+  border-radius: 10px;
+  border: none;
+  background: #000;
+}
+nav .nav-wrapper .input-field input {
+  border-radius: 10px;
+  border: none;
+}

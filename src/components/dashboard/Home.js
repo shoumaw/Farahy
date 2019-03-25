@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { Redirect } from 'react-router-dom'
+import HomeHeader from './HomeHeader'
 import M from "materialize-css";
 import '../../styles/home.css';
 
@@ -17,30 +18,7 @@ class Home extends Component {
 
     return (
       <body>
-        <div id="index-banner" class="parallax-container">
-          <div class="section no-pad-bot">
-            <div class="container">
-              <br></br>
-              <h1 class="header center teal-text text-lighten-2" style={{fontWeight: "italic"}}> </h1>
-              <div class="row center">
-                <h3 class="header col s12 light">A community of wedding planners, djs and photographers ready for your wedding</h3>
-              </div>
-              <br></br>
-              <nav className="nav-search center">
-                <div class="nav-wrapper pink">
-                  <form className="search">
-                    <div class="input-field">
-                      <input className="search" type="search" placeholder="Search here..." required/>
-                      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                      <i class="material-icons">close</i>
-                    </div>
-                  </form>
-                </div>
-              </nav> 
-            </div>
-          </div>
-          <div class="parallax"><img className="responsive-img" src="/img/wedding-background7.jpg" alt="Unsplashed background img 1" style={{opacity: 0.1, transform: `translate3d(-50%, 221.745px, 0px)`}}/></div>
-        </div>
+        <HomeHeader/>
         <div class="container">
           <div class="section">
             <div class="row">
