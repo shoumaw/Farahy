@@ -1,26 +1,15 @@
 import React, { Component } from 'react'
-import ProjectList from '../projects/ProjectList'
-import Notifications from './Notifications'
 import { connect } from 'react-redux'
 import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { Redirect } from 'react-router-dom'
 import M from "materialize-css";
-import '../../styles/dashboard.css';
-import $ from "jquery";
+import '../../styles/home.css';
 
-class Dashboard extends Component {
+class Home extends Component {
   componentDidMount() {
     // Auto initialize all the things!
     M.AutoInit();
-    $("#inpt_search").on('focus', function () {
-      $(this).parent('label').addClass('active');
-    });
-    
-    $("#inpt_search").on('blur', function () {
-      if($(this).val().length == 0)
-        $(this).parent('label').removeClass('active');
-    });
   }
   render() {
     const { projects, auth, notifications } = this.props;
@@ -37,10 +26,17 @@ class Dashboard extends Component {
                 <h3 class="header col s12 light">A community of wedding planners, djs and photographers ready for your wedding</h3>
               </div>
               <br></br>
-              <form class="search" action="">
-                <input type="search" placeholder="Search here..." required/>
-                <button type="submit">Search</button>
-              </form>  
+              <nav className="nav-search center">
+                <div class="nav-wrapper pink">
+                  <form className="search">
+                    <div class="input-field">
+                      <input className="search" type="search" placeholder="Search here..." required/>
+                      <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                      <i class="material-icons">close</i>
+                    </div>
+                  </form>
+                </div>
+              </nav> 
             </div>
           </div>
           <div class="parallax"><img className="responsive-img" src="/img/wedding-background7.jpg" alt="Unsplashed background img 1" style={{opacity: 0.1, transform: `translate3d(-50%, 221.745px, 0px)`}}/></div>
@@ -48,21 +44,29 @@ class Dashboard extends Component {
         <div class="container">
           <div class="section">
             <div class="row">
-              <div class="col s12 m4">
+              <div class="col s3 m3 l3">
                 <div class="icon-block">
                   <h2 class="center pink-text"><i className="material-icons">find_in_page</i></h2>
                   <h5 class="center">Select your service from our marketplace.</h5>
                 </div>
               </div>
-
-              <div class="col s12 m4">
+              <div class="col s1 m1 l1">
+                <div class="icon-block">
+                  <h2 class="center pink-text"><i className="material-icons">navigate_next</i></h2>
+                </div>
+              </div>
+              <div class="col s3 m3 l3">
                 <div class="icon-block">
                   <h2 class="center pink-text"><i className="material-icons">speaker_notes</i></h2>
                   <h5 class="center">Collaborate with an expert on your wedding.</h5>
                 </div>
               </div>
-
-              <div class="col s12 m4">
+              <div class="col s1 m1 l1">
+                <div class="icon-block">
+                  <h2 class="center pink-text"><i className="material-icons">navigate_next</i></h2>
+                </div>
+              </div>
+              <div class="col s3 m3 l3">
                 <div class="icon-block">
                   <h2 class="center pink-text"><i className="material-icons">done_outline</i></h2>
                   <h5 class="center">Review, approve and you're done!</h5>
@@ -86,7 +90,7 @@ class Dashboard extends Component {
             <div class="row">
               <div class="col s12 center">
                 <h3><i class="mdi-content-send brown-text"></i></h3>
-                <h3 className="teal-text text-lighten-2">Popular Categories</h3>
+                <h3 className="pink-text">Popular Categories</h3>
                 <h5 class="center-align ">From wedding planners to photographers, we've got what you need</h5>                
               </div>
             </div>
@@ -223,4 +227,4 @@ export default compose(
     { collection: 'projects', orderBy: ['createdAt', 'desc']},
     { collection: 'notifications', limit: 3, orderBy: ['time', 'desc']}
   ])
-)(Dashboard)
+)(Home)
