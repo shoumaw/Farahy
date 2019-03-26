@@ -4,7 +4,7 @@ import { firestoreConnect } from 'react-redux-firebase'
 import { compose } from 'redux'
 import { Redirect } from 'react-router-dom'
 import M from "materialize-css";
-import '../../styles/category.css';
+import '../../styles/category/category.css';
 
 class Category extends Component {
   componentDidMount() {
