@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import M from "materialize-css";
+import '../../styles/home/homeInstructions.css';
+
 
 class HomeInstructions extends Component {
   componentDidMount() {
@@ -7,35 +9,37 @@ class HomeInstructions extends Component {
   }
   render() {
     return (
-        <div class="container">
-          <div class="section">
-            <div class="row">
-              <div class="col s3 m3 l3">
-                <div class="icon-block">
-                  <h2 class="center pink-text"><i className="material-icons">find_in_page</i></h2>
-                  <h5 class="center">Select your service from our marketplace.</h5>
+        <div className="container">
+          <div className="section instructions-section valign-wrapper">
+            <div className="row center">
+              <div className="col s0.5 m0.5 l0.5">
+              </div>
+              <div className="col s3 m3 l3">
+                <div className="icon-block">
+                  <h1 className="center pink-text"><i className="material-icons">find_in_page</i></h1>
+                  <h5 className="center">Select your service from our marketplace.</h5>
                 </div>
               </div>
-              <div class="col s1 m1 l1">
-                <div class="icon-block">
-                  <h2 class="center pink-text"><i className="material-icons">navigate_next</i></h2>
+              <div className="col s1 m1 l1">
+                <div className="icon-block">
+                  <h1 className="center pink-text"><i className="material-icons">navigate_next</i></h1>
                 </div>
               </div>
-              <div class="col s3 m3 l3">
-                <div class="icon-block">
-                  <h2 class="center pink-text"><i className="material-icons">speaker_notes</i></h2>
-                  <h5 class="center">Collaborate with an expert on your wedding.</h5>
+              <div className="col s3 m3 l3">
+                <div className="icon-block">
+                  <h1 className="center pink-text"><i className="material-icons">speaker_notes</i></h1>
+                  <h5 className="center">Collaborate with an expert on your wedding.</h5>
                 </div>
               </div>
-              <div class="col s1 m1 l1">
-                <div class="icon-block">
-                  <h2 class="center pink-text"><i className="material-icons">navigate_next</i></h2>
+              <div className="col s1 m1 l1">
+                <div className="icon-block">
+                  <h1 className="center pink-text"><i className="material-icons">navigate_next</i></h1>
                 </div>
               </div>
-              <div class="col s3 m3 l3">
-                <div class="icon-block">
-                  <h2 class="center pink-text"><i className="material-icons">done_outline</i></h2>
-                  <h5 class="center">Review, approve and you're done!</h5>
+              <div className="col s3 m3 l3">
+                <div className="icon-block">
+                  <h1 className="center pink-text"><i className="material-icons">done_outline</i></h1>
+                  <h5 className="center">Review, approve and you're done!</h5>
                 </div>
               </div>
             </div>

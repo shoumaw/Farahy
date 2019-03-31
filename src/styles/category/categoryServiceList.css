@@ -1,0 +1,79 @@
+
+
+.search-filters__price__input {
+    margin-right: 5.5px;
+    line-height: normal;
+    padding: 0;
+    border: 0;
+    border-radius: 4px;
+    text-align: center;
+    color: #000;
+    display: inline;
+}
+
+.card-image img{
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-card .card-content{
+    padding: 10px;
+}
+
+.service__card__name {
+    max-height: 44px;
+    overflow: hidden;
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+}
+.service__card__provider__name {
+    font-weight: 700;
+    display: block;
+    font-size: .9rem;
+}
+
+.service__card__provider__recommended {
+    display: inline-block;
+    font-size: .9rem;
+    color: #999;
+    margin-right: 4.4px;
+}
+.service__card__provider__jobs-done {
+    display: inline-block;
+    font-size: .9rem;
+    color: #999;
+}
+.service__card__amount {
+    font-weight: 700;
+    text-align: right;
+    font-size: 1 rem;
+    line-height: 1;
+    padding-bottom: 7px;
+}
+.service__card__turnaround {
+    text-align: right;
+    font-size: .9rem;
+    color: #999;
+}
+
+
+.service__card__gallery__link, .service__card--custom-job__link {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.service__card__text {
+    overflow: hidden;
+    height: 66px;
+    margin-left: 11px;
+    margin-right: 11px;
+    margin-bottom: 16.5px;
+}
+
+.service__card__details {
+    display: block;
+    min-height: 44px;
+}

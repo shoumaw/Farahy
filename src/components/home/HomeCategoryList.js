@@ -1,32 +1,36 @@
-import React, { Component } from 'react'
-import M from "materialize-css";
+import React from 'react'
+import '../../styles/home/homeCategoryList.css';
 
 const HomeCategoryList = (props) => {
     const { categories } = props;
 
     return (        
-        <div class="container">
-            <div class="section">
-                <div class="row">
-                    <div class="col s12 center">
-                        <h3><i class="mdi-content-send brown-text"></i></h3>
-                        <h3 className="pink-text">Popular Categories</h3>
-                        <h5 class="center-align ">From wedding planners to photographers, we've got what you need</h5>                
+        <div>
+            <div className="section category-section valign-wrapper">
+                <div className="row valign-wrapper">
+                    <div className="col s4">
+                        <h3><i className="mdi-content-send brown-text"></i></h3>
+                        <h3 className="pink-text center-align">Popular Categories</h3>
+                        <h5 className="center-align">From wedding planners to photographers, we've got what you need</h5>                
                     </div>
-                </div>
-                <div class="row center">
-                { categories && categories.map(category => {
-                return (
-                    <div class="col s12 m6 l3">
-                        <div class="card">
-                            <div class="card-image">
-                                <img className="responsive-img" src={category.img}/>
-                                <a className="center-align" href="#">{category.type}</a>
+                    <div className="col s8">
+                        <div className="row">
+                        { categories && categories.map(category => {
+                        return (
+                            <div className="col s3">
+                                <div className="card very-small category-list-card">
+                                    <div className="card-image category-list-card-image">
+                                        <img className="responsive-img" src={category.img}/>
+                                    </div>
+                                    <div class="card-content center category-card-content">
+                                        <a className="category-list-card-link" href="#">{category.type}</a>
+                                    </div>    
+                                </div>	
                             </div>
-                        </div>	
-                    </div>
-                    )
-                })} 
+                            )
+                        })} 
+                        </div>
+                    </div>  
                 </div>
             </div>
         </div>

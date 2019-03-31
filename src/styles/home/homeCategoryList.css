@@ -1,0 +1,21 @@
+
+   .category-list-card-image img {
+    height:200px;
+    overflow: hidden;
+
+   }
+
+   .category-list-card-link { 
+     color: inherit; 
+    }
+
+   .category-section{
+     min-height: 800px;
+     padding-right: 40px;
+     padding-left: 20px;
+   }
+
+   .category-list-card-link{
+    font-weight: 350;
+    font-size: 1rem;
+   }
