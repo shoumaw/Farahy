@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../../styles/home/homeCategoryList.css';
 
 const HomeCategoryList = (props) => {
@@ -18,14 +19,16 @@ const HomeCategoryList = (props) => {
                         { categories && categories.map(category => {
                         return (
                             <div className="col s3">
-                                <div className="card very-small category-list-card">
-                                    <div className="card-image category-list-card-image">
-                                        <img className="responsive-img" src={category.img}/>
-                                    </div>
-                                    <div class="card-content center category-card-content">
-                                        <a className="category-list-card-link" href="#">{category.type}</a>
-                                    </div>    
-                                </div>	
+                                <Link to={'/category/' + category.id} key={category.id}>
+                                    <div className="card very-small category-list-card">
+                                        <div className="card-image category-list-card-image">
+                                            <img className="responsive-img" src={category.img}/>
+                                        </div>
+                                        <div class="card-content center category-card-content">
+                                            <a className="category-list-card-link" href="#">{category.type}</a>
+                                        </div>    
+                                    </div>	
+                                </Link>
                             </div>
                             )
                         })} 

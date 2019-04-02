@@ -10,30 +10,44 @@ import CategoryServiceList from './CategoryServiceList';
 
 class Category extends Component {
   render() {
-    const { services, auth } = this.props;
+    const { weddingVenues, auth } = this.props;
+    console.log(weddingVenues);
+
     if (!auth.uid) return <Redirect to='/signin' /> 
 
     return (
       <div>
         <CategoryHeader/>
         <CategorySearchFilters/>
-        <CategoryServiceList services={services}/>
+        <CategoryServiceList services={weddingVenues}/>
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state);
+  //console.log(state);
   return {
-    services: state.firestore.ordered.services,
+    weddingVenues: state.firestore.ordered.weddingVenues,
     auth: state.firebase.auth,
   }
 }
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([
-    { collection: 'services'},
-  ])
+  firestoreConnect((props)=>{
+    //console.log(props)
+  return [
+    { 
+      collection: 'categories',
+      doc: "Nt2XJutFFOrqh3WqYn14",
+      subcollections: [
+        {
+          collection : 'weddingVenues'
+        }
+      ],
+      storeAs: "weddingVenues"
+    },
+  ]}
+  )
 )(Category)

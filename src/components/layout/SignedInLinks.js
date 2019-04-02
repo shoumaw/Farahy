@@ -1,39 +1,36 @@
-import React from 'react'
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signOut } from '../../store/actions/authActions'
-import M from "materialize-css";
-
-const SignedInLinks = (props) => {
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems, {
-      coverTrigger: false,
-      constrainWidth: false,
-    });  });
+import { Dropdown} from 'react-materialize';
 
 
+class SignedInLinks extends Component{
+  componentDidMount() {
+}
+
+render(){
   return (
     <div>
       <ul className="right">
-  <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li class="divider" tabindex="-1"></li>
-    <li><a href="#!">three</a></li>
-    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-  </ul>
-        <li><NavLink to='/create' className="pink-text">Browse</NavLink></li>
-        <li><a className="pink-text" onClick={props.signOut}>Log Out</a></li>
+        <Dropdown trigger={<li><NavLink to='/create' className='pink-text'>Browse</NavLink></li>} options={{belowOrigin: true, hover: true}}>
+            <a href="#!">Photographers</a>
+            <a href="#!">Wedding Planners</a>
+            <a href="#!">Djs</a>
+            <a href="#!">Wedding Cakes</a>
+            <a href="#!">Catering</a>
+            <a href="#!">Wedding Venues</a>
+            <a href="#!">Wedding Dresses</a>
+            <a href="#!">Wedding Decorations</a>
+        </Dropdown>
+        <li><a className="pink-text" onClick={this.props.signOut}>Log Out</a></li>
         <li><NavLink to='/' className="btn btn-floating pink lighten-1">
-          {props.profile.initials}
+          {this.props.profile.initials}
         </NavLink></li>
       </ul>
     </div>
   )
+}
 }
 
 const mapDispatchToProps = (dispatch) => {

@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-import M from "materialize-css";
 import '../../styles/home/homeBanner.css';
 
 class HomeBanner extends Component {
-  componentDidMount() {
-  }
+
   render() {
     const { quote, backgroundImg } = this.props;
     const searchBar = this.props.children;
